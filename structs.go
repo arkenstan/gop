@@ -2,45 +2,37 @@ package main
 
 import "fmt"
 
-type Person struct {
+type person struct {
 	name string
 	age  int
 }
 
-func newPerson(name string) *Person {
-	p := Person{name: name}
+func newPerson(name string) *person {
+	p := person{name: name}
 	p.age = 42
 	return &p
 }
 
-func structImpl() {
+func structs() {
+	fmt.Println(person{"Bob", 20})
+	fmt.Println(person{name: "Alice", age: 30})
+	fmt.Println(person{name: "Fred"})
+	fmt.Println(&person{name: "Ann", age: 40})
+	fmt.Println(newPerson("Jon"))
 
-	fmt.Println(Person{"Bob", 20})
-	fmt.Println(Person{age: 30, name: "Alice"})
-	fmt.Println(Person{name: "Fred"})
-	fmt.Println(&Person{name: "Ann", age: 40})
-	fmt.Println(newPerson("john"))
-
-	s := Person{name: "Sean", age: 50}
-	fmt.Println(s)
-
-	s.age = 36
-	fmt.Println(s)
+	s := person{name: "Sean", age: 50}
+	fmt.Println(s.name)
 
 	sp := &s
-	fmt.Println(sp)
+	fmt.Println(sp.age)
 
-	sp.age = 60
-	fmt.Println(sp)
+	sp.age = 51
+	fmt.Println(sp.age)
 
 	dog := struct {
 		name   string
 		isGood bool
-	}{
-		"Rex",
-		true,
-	}
+	}{"Rex", true}
 
 	fmt.Println(dog)
-
 }

@@ -17,7 +17,10 @@ func main() {
 	// stringsAndRunes()
 	// structImpl()
 	// structMethods()
-
-	interfaces()
+	// interfaces()
+	// structs()
+	// methods()
+	// structEmbedding()
+	generics()
 
 }
